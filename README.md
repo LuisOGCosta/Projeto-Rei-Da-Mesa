@@ -16,9 +16,17 @@ navegação roda com estado local de exemplo (`src/dados/`), para que as telas
 possam ser revisadas de ponta a ponta. O backend entra depois, sem mexer nas
 telas.
 
-O app abre em `/telas`, um índice que leva a cada uma das 24 telas já no
-estado certo da mesa. Os temporizadores são reais: a chamada conta 60 s de
+O app abre no **Login**, como o produto de verdade: login → completar
+cadastro → abas. Os temporizadores são reais: a chamada conta 60 s de
 verdade e, ao zerar, aplica a regra de expiração.
+
+Para pular direto a qualquer uma das 24 telas, há um índice em `/telas`,
+alcançável pela faixa "Revisão" no fim do Perfil. Cada item abre a tela já
+no estado certo da mesa.
+
+No navegador o app fica preso a um quadro de 390 × 844 centralizado
+(`MolduraDeAparelho`), senão o layout — desenhado para 390px — estica numa
+janela de desktop e não se parece com o desenho. No celular não faz nada.
 
 ## Rodar
 
@@ -41,8 +49,9 @@ EAS (`npx eas-cli@latest build`), conforme `AGENTS.md`.
 | `src/dados/` | Dados e sessão de exemplo, enquanto não há backend. |
 
 As rotas `/telas` (índice das 24 telas) e `/componentes` (mostruário dos
-componentes base) existem só para revisão: saem quando o desenho estiver
-fechado e o login entrar.
+componentes base) existem só para revisão, junto com o componente
+`AtalhoDeRevisao` que leva a elas pelo Perfil: saem quando o desenho
+estiver fechado e o login entrar.
 
 ## Onde nos afastamos do handoff
 

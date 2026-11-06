@@ -43,7 +43,7 @@ export default function Login() {
             caixaNormal
             alto
             // Sem backend ainda: entra direto no cadastro, como no primeiro acesso.
-            onPress={() => router.replace('/acesso/cadastro')}
+            onPress={() => router.push('/acesso/cadastro')}
           />
           <Texto variante="nota" style={estilos.termos}>
             Ao continuar, você concorda com os{' '}

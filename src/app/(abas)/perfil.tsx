@@ -1,6 +1,7 @@
 import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
+import { AtalhoDeRevisao } from '@/componentes/AtalhoDeRevisao';
 import { Avatar } from '@/componentes/Avatar';
 import { CabecalhoPreto } from '@/componentes/CabecalhoPreto';
 import { Icone } from '@/componentes/Icone';
@@ -49,6 +50,11 @@ export default function Perfil() {
           <LinhaDeHistorico key={`${linha.titulo}-${i}`} {...linha} />
         ))}
       </ScrollView>
+
+      {/* Sai quando o desenho estiver fechado. */}
+      <View style={estilos.atalhos}>
+        <AtalhoDeRevisao />
+      </View>
 
       <View style={estilos.rodape}>
         <Texto variante="nota" style={estilos.links}>
@@ -183,6 +189,7 @@ const estilos = StyleSheet.create({
   linhaTexto: { flex: 1, gap: 2 },
   pontos: { fontFamily: fonte.corpoRegular, fontSize: 15, lineHeight: 15 },
 
+  atalhos: { paddingHorizontal: espaco.pagina },
   rodape: {
     flexDirection: 'row',
     alignItems: 'center',

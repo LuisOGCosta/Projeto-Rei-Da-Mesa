@@ -1,9 +1,9 @@
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 
 import { Avatar } from '@/componentes/Avatar';
+import { BarraDeVolta } from '@/componentes/BarraDeVolta';
 import { Botao } from '@/componentes/Botao';
 import { Campo } from '@/componentes/Campo';
 import { Icone } from '@/componentes/Icone';
@@ -15,7 +15,6 @@ import { cores, raio, toque, veu } from '@/tema/tokens';
 
 /** 02 · Completar cadastro. Primeiro acesso, depois do Google. */
 export default function Cadastro() {
-  const inset = useSafeAreaInsets();
   const [nome, setNome] = useState(EU.nome);
   const [apelido, setApelido] = useState(EU.apelido);
   const [aceitou, setAceitou] = useState(true);
@@ -24,7 +23,9 @@ export default function Cadastro() {
   const podeConcluir = nome.trim().length > 0 && apelido.trim().length > 0 && aceitou;
 
   return (
-    <Tela rolavel estiloConteudo={[estilos.conteudo, { paddingTop: inset.top + 24 }]}>
+    <Tela>
+      <BarraDeVolta de="Entrar" />
+      <ScrollView contentContainerStyle={estilos.conteudo} showsVerticalScrollIndicator={false}>
       <View style={estilos.titulos}>
         <Texto variante="kicker">Primeiro acesso · último passo</Texto>
         <Texto variante="tituloGrande">Confirme seus dados</Texto>
@@ -91,12 +92,13 @@ export default function Cadastro() {
         estilo={estilos.concluir}
         onPress={() => router.replace('/agora')}
       />
+      </ScrollView>
     </Tela>
   );
 }
 
 const estilos = StyleSheet.create({
-  conteudo: { paddingHorizontal: 26, paddingBottom: 34, gap: 18 },
+  conteudo: { paddingHorizontal: 26, paddingTop: 8, paddingBottom: 34, gap: 18 },
   titulos: { gap: 8 },
   conta: {
     flexDirection: 'row',
