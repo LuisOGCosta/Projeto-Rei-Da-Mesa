@@ -27,7 +27,10 @@ export default function Login() {
         </View>
 
         <Texto variante="manchete" style={estilos.manchete}>
-          A mesa do escritório, <Texto variante="manchete" style={estilos.italico}>na ordem certa.</Texto>
+          Filas organizadas e{' '}
+          <Texto variante="manchete" style={estilos.italico}>
+            Competitividade elevada
+          </Texto>
         </Texto>
 
         <Divisor verde estilo={estilos.filete} />
