@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 
 import { fonte } from '@/tema/tipografia';
 import { cores, raio } from '@/tema/tokens';
@@ -34,7 +34,7 @@ type Props = {
   variante?: VariantePilula;
   /** Sobrescreve o icone padrao da variante. Use null para nao mostrar nenhum. */
   icone?: NomeIcone | null;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 };
 
 const iconePadrao: Record<VariantePilula, NomeIcone | null> = {

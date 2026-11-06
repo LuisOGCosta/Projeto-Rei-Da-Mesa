@@ -16,6 +16,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { ProvedorDeJogo } from '@/dados/jogo';
 import { ProvedorDeSessao } from '@/dados/sessao';
 import { cores } from '@/tema/tokens';
 
@@ -44,20 +45,43 @@ export default function Raiz() {
   return (
     <SafeAreaProvider>
       <ProvedorDeSessao>
-        <StatusBar style="light" />
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            contentStyle: { backgroundColor: cores.papel },
-          }}>
-          <Stack.Screen name="(abas)" />
-          <Stack.Screen name="componentes" />
-          {/* Sobrepostos: a tela de baixo continua visivel atras da folha. */}
-          <Stack.Screen
-            name="folha-exemplo"
-            options={{ presentation: 'transparentModal', animation: 'fade' }}
-          />
-        </Stack>
+        <ProvedorDeJogo>
+          <StatusBar style="light" />
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              contentStyle: { backgroundColor: cores.papel },
+            }}>
+            <Stack.Screen name="(abas)" />
+            <Stack.Screen name="componentes" />
+            {/* Sobrepostos: a tela de baixo continua visivel atras da folha. */}
+            <Stack.Screen
+              name="folha-exemplo"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen
+              name="convite-recebido"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen
+              name="chamada"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen
+              name="registrar"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen
+              name="revisao"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen
+              name="reverter"
+              options={{ presentation: 'transparentModal', animation: 'fade' }}
+            />
+            <Stack.Screen name="vitoria" options={{ animation: 'fade' }} />
+          </Stack>
+        </ProvedorDeJogo>
       </ProvedorDeSessao>
     </SafeAreaProvider>
   );

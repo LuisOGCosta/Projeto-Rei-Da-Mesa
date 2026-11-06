@@ -1,4 +1,4 @@
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 
 import { cores, veu } from '@/tema/tokens';
 
@@ -8,7 +8,7 @@ export function Divisor({
   estilo,
 }: {
   verde?: boolean;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 }) {
   return <View style={[verde ? estilos.verde : estilos.neutro, estilo]} />;
 }

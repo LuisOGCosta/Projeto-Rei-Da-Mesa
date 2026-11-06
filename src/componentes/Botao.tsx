@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Pressable, PressableProps, StyleSheet, View, ViewStyle } from 'react-native';
+import { Pressable, PressableProps, StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 
 import { cores, opacidadeDesabilitado, raio, toque, veu } from '@/tema/tokens';
 
@@ -13,7 +13,9 @@ export type VarianteBotao =
   /** Contorno preto 1.5px — acoes do modo administrador. */
   | 'escuro'
   /** Contorno claro sobre fundo preto — usado na tela de vitoria. */
-  | 'claro';
+  | 'claro'
+  /** Preenchido em verde-campo com texto escuro — a acao da tela de vitoria. */
+  | 'seloClaro';
 
 type Props = Omit<PressableProps, 'style' | 'children'> & {
   rotulo: string;
@@ -24,7 +26,7 @@ type Props = Omit<PressableProps, 'style' | 'children'> & {
   caixaNormal?: boolean;
   /** 56px em vez de 54px, como pede o botao do login. */
   alto?: boolean;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 };
 
 const porVariante: Record<
@@ -59,6 +61,13 @@ const porVariante: Record<
     larguraBorda: 1,
     texto: cores.papel,
     fundoPressionado: 'rgba(243,242,242,.1)',
+  },
+  seloClaro: {
+    fundo: cores.verdeCampo,
+    borda: cores.verdeCampo,
+    larguraBorda: 1.5,
+    texto: cores.tintaVitoria,
+    fundoPressionado: cores.verdeSelo,
   },
 };
 

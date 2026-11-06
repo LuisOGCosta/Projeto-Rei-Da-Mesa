@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Pressable, StyleSheet, View, ViewStyle } from 'react-native';
+import { Pressable, StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 
 import { cores, opacidadeDesabilitado, raio, veu } from '@/tema/tokens';
 
@@ -19,7 +19,7 @@ type Props = {
   /** Esmaece o cartao a 45%, como nos itens fora do prazo. */
   esmaecido?: boolean;
   onPress?: () => void;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 };
 
 const porVariante: Record<VarianteCartao, { borda: string; larguraBorda: number; fundo: string }> = {

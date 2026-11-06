@@ -1,6 +1,12 @@
 import { Redirect } from 'expo-router';
 
-/** A raiz do app abre em "Acontecendo agora". */
+/**
+ * Entrada do app.
+ *
+ * Nesta fase (revisão visual, sem backend) abre no índice das 24 telas, que
+ * é o que se quer conferir. Quando o login Google entrar, isto passa a
+ * decidir entre /acesso/login e /agora conforme a sessão.
+ */
 export default function Inicio() {
-  return <Redirect href="/agora" />;
+  return <Redirect href="/telas" />;
 }

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { cores, espaco } from '@/tema/tokens';
@@ -9,7 +9,7 @@ type Props = {
   /** Padding vertical do bloco. O desenho varia por tela (6-16px). */
   acima?: number;
   abaixo?: number;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 };
 
 /**

@@ -1,4 +1,4 @@
-import { StyleSheet, View, ViewStyle } from 'react-native';
+import { StyleSheet, View, ViewStyle, StyleProp} from 'react-native';
 
 import { fonte } from '@/tema/tipografia';
 import { cores, veu } from '@/tema/tokens';
@@ -20,7 +20,7 @@ type Props = {
   iniciais?: string;
   tamanho?: number;
   variante?: VarianteAvatar;
-  estilo?: ViewStyle;
+  estilo?: StyleProp<ViewStyle>;
 };
 
 const porVariante: Record<VarianteAvatar, { fundo: string; borda: string; larguraBorda: number; texto: string }> = {

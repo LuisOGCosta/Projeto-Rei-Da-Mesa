@@ -17,12 +17,15 @@ import Clock from 'lucide-react-native/icons/clock';
 import Crown from 'lucide-react-native/icons/crown';
 import Flag from 'lucide-react-native/icons/flag';
 import ListChecks from 'lucide-react-native/icons/list-checks';
+import LogOut from 'lucide-react-native/icons/log-out';
 import RotateCcw from 'lucide-react-native/icons/rotate-ccw';
 import Search from 'lucide-react-native/icons/search';
+import Send from 'lucide-react-native/icons/send';
 import ShieldCheck from 'lucide-react-native/icons/shield-check';
 import Trophy from 'lucide-react-native/icons/trophy';
 import UserPlus from 'lucide-react-native/icons/user-plus';
 import UserRound from 'lucide-react-native/icons/user-round';
+import UserX from 'lucide-react-native/icons/user-x';
 import X from 'lucide-react-native/icons/x';
 
 export const Icone = {
@@ -52,6 +55,12 @@ export const Icone = {
   check: Check,
   /** Periodo do ranking. */
   calendario: Calendar,
+  /** Sair da conta. */
+  sair: LogOut,
+  /** Colega sem conta no Futmesa. */
+  semConta: UserX,
+  /** Enviar o link do app. */
+  enviar: Send,
   /** Marca do app na tela de login. */
   marca: Crown,
   voltar: ArrowLeft,

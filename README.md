@@ -8,14 +8,17 @@ Feito em **React Native + Expo** (SDK 58, Expo Router).
 
 ## Estado atual
 
-Em construção, a partir do handoff de design em
-`../futmesa-handoff/design_handoff_futmesa/` (24 telas, pt-BR, alta
-fidelidade).
+As **24 telas** do handoff (`../futmesa-handoff/design_handoff_futmesa/`,
+pt-BR, alta fidelidade) estão implementadas.
 
 Nesta fase o app é **visual**: não há banco de dados nem login Google. A
 navegação roda com estado local de exemplo (`src/dados/`), para que as telas
 possam ser revisadas de ponta a ponta. O backend entra depois, sem mexer nas
 telas.
+
+O app abre em `/telas`, um índice que leva a cada uma das 24 telas já no
+estado certo da mesa. Os temporizadores são reais: a chamada conta 60 s de
+verdade e, ao zerar, aplica a regra de expiração.
 
 ## Rodar
 
@@ -37,8 +40,26 @@ EAS (`npx eas-cli@latest build`), conforme `AGENTS.md`.
 | `src/tema/` | Tokens de design e presets de tipografia — única fonte de cor e tipo. |
 | `src/dados/` | Dados e sessão de exemplo, enquanto não há backend. |
 
-A rota `/componentes` é um mostruário dos componentes base, aberto pelo Perfil.
-Sai do app quando o desenho estiver fechado.
+As rotas `/telas` (índice das 24 telas) e `/componentes` (mostruário dos
+componentes base) existem só para revisão: saem quando o desenho estiver
+fechado e o login entrar.
+
+## Onde nos afastamos do handoff
+
+Três pontos, todos deliberados:
+
+- **Fundo dos sobrepostos**: o README do handoff descreve "rgba de #201f1d",
+  mas as 24 telas em HTML usam `rgba(0,0,0,.55)`. Seguimos o HTML.
+- **Régua da chamada**: o README fala em "régua verde inset 3px"; o HTML usa
+  borda de 4px no topo da folha. Seguimos o HTML.
+- **Cabeçalho do admin**: com os tamanhos do desenho (kicker 12px + nome
+  13px), a linha precisa de 319px num espaço de 308 e não cabe nos 390 do
+  aparelho. Baixamos para 11px/12px, dentro da escala do próprio projeto,
+  para não cortar "no local".
+
+Além disso, a marca de partida revertida usa o ícone `rotate-ccw` do Lucide
+em vez do caractere `↺`: nem a Cormorant Garamond nem a Lora têm esse glifo,
+e no aparelho ele cairia numa fonte de sistema.
 
 ## Regras de negócio
 
